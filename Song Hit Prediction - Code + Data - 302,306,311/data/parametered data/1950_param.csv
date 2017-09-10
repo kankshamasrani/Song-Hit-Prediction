@@ -1,0 +1,31 @@
+song_name,artist,acousticness,danceability,duration,energy,key,liveness,loudness,mode,speechiness,tempo,time_signature,valence
+Goodnight Irene,Gordon Jenkins and The Weavers
+Mona Lisa,Nat King Cole,0.678185,0.27739,207.18667,0.380042,1,0.105976,-8.582,1,0.027965,81.139,4,0.211631
+Third Man Theme,Anton Karas,0.925136,0.451623,30.00018,0.291209,6,0.26944,-16.961,1,0.041452,95.989,4,0.8585
+Sam's Song,Gary and Bing Crosby
+Simple Melody,Gary and Bing Crosby
+"Music, Music, Music",Teresa Brewer,0.251417,0.56293,171.42925,0.912978,2,0.130908,-1.658,1,0.036438,97.803,4,0.83499
+Third Man Theme,Guy Lombardo,0.961523,0.736926,166.08086,0.206304,0,0.074564,-17.441,1,0.034153,123.704,4,0.446009
+Chattanoogie Shoe Shine Boy,Red Foley,0.375186,0.711461,166.95955,0.681523,10,0.045166,-6.796,1,0.088858,148.313,4,0.692391
+Harbor Lights,Sammy Kaye,0.983472,0.22155,203.32481,0.03262,2,0.106068,-24.887,1,0.033586,85.238,4,0.15671
+It Isn't Fair,Sammy Kaye and Don Cornell
+If I Knew You Were Coming I'd've Baked A Cake,Eileen Barton
+Bonaparte's Retreat,Kay Starr,0.83917,0.699262,201.41288,0.242247,8,0.056463,-9.467,1,0.03873,146.083,4,0.868629
+"Tzena, Tzena, Tzena",Gordon Jenkins and The Weavers
+There's No Tomorrow,Tony Martin,0.917441,0.315461,196.85288,0.13321,7,0.383094,-15.388,0,0.034508,90.425,4,0.221761
+The Thing,Phil Harris,0.949899,0.686912,135.28,0.585276,2,0.431213,-12.989,1,0.148806,130.929,4,0.917384
+Sentimental Me,Ames Brothers,0.950044,0.31649,194.87664,0.134132,8,0.124244,-14.679,1,0.030362,76.264,4,0.296122
+I Wanna Be Loved,Andrews Sisters and Gordon Jenkins
+Tennessee Waltz,Patti Page,0.913182,0.46499,184.16,0.285595,5,0.106771,-7.351,1,0.028097,86.414,3,0.378873
+"I Can Dream, Can't I",Andrews Sisters and Gordon Jenkins
+I'll Never Be Free,Tennessee Ernie Ford and Kay Starr
+All My Love,Patti Page,0.803036,0.686435,186.22385,0.333154,8,0.324254,-9.212,1,0.05724,127.423,4,0.542544
+My Foolish Heart,Gordon Jenkins,0.983238,0.341493,195.23882,0.102238,4,0.281785,-15.292,1,0.031426,84.531,4,0.134322
+Rag Mop,Ames Brothers,0.962017,0.513074,163.41796,0.552498,7,0.288104,-8.586,1,0.053936,200.829,4,0.985703
+Bewitched,Bill Snyder,0.974109,0.449827,170.31791,0.273513,1,0.111819,-14.845,1,0.033966,77.932,4,0.227075
+Hoop-Dee-Doo,Perry Como,0.995265,0.436237,20.50567,0.368717,6,0.131716,-8.586,1,0.069837,163.978,1,0.961339
+Bewitched,Gordon Jenkins,0.979831,0.39831,215.66621,0.023701,6,0.243703,-20.078,0,0.046268,72.288,4,0.221006
+Can Anyone Explain?,Ames Brothers,0.877677,0.289777,181.94449,0.092873,9,0.102249,-20.999,1,0.031987,141.037,4,0.316362
+My Foolish Heart,Billy Eckstine,0.968529,0.312447,182.18376,0.224177,9,0.24938,-13.96,1,0.037311,87.454,1,0.127315
+Dear Hearts And Gentle People,Bing Crosby,0.979372,0.749078,157.24512,0.327365,2,0.152044,-10.776,1,0.031264,108.487,4,0.760168
+Cry Of The Wild Goose,Frankie Laine,0.802715,0.398488,172.77288,0.362367,10,0.266233,-11.769,0,0.052519,81.559,4,0.459842

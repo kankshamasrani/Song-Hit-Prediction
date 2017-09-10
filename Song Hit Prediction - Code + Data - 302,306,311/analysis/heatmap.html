@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Simple markers</title>
+    <style>
+      html, body, #map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+
+      #panel {
+        position: absolute;
+        top: 5px;
+        left: 50%;
+        margin-left: -180px;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+      }
+    
+    </style>
+
+    <script src="/home/rahul/.npm/papaparse/4.1.0/package/papaparse.min.js"></script>
+    <script src="/home/rahul/.npm/jquery/2.1.3/package/dist/cdn/jquery-2.1.3.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=visualization"></script>
+    
+
+    <script>
+        var data = [];
+        var points = [];
+        var test = [];
+        var flag = 0;
+
+        function handleFileSelect() {
+
+          var files = $("#csv-file")[0].files;
+          
+          var file;
+          for (file = 0; file < files.length; file++)
+          {
+                Papa.parse(files[file], {
+                                            header: true,
+                                            dynamicTyping: true,
+                                            complete: function(results) {
+
+                                                    flag = flag + 1;
+                                                    data[data.length] = results;
+                                                    if(flag==files.length)
+                                                    {
+                                                      getPoints(data);
+                                                    }
+                                                }
+                            });
+          }         
+          
+        }
+
+       function getPoints(data)
+       {
+          for(var d=0 ; d<data.length ; d++)
+          {
+            for(var e=0 ; e<data[d].data.length ; e++)
+            {
+              if(data[d].data[e].latitude == undefined)
+              continue; 
+              if(data[d].data[e].latitude != undefined  && data[d].data[e].rank > 99 )
+                break;
+              console.log(data[d].data[e]);
+              points[points.length] = data[d].data[e];
+            }
+          }
+
+          plotHeatMap(points);
+       }
+
+        var heatmap; 
+       function plotHeatMap(points)
+       {          
+          var songData = [];
+
+          for(var s=0; s<points.length;s++)
+          {
+            songData[s] = new google.maps.LatLng(points[s].latitude, points[s].longitude);              
+          }        
+
+                 
+
+          function initialize() {
+
+            console.log('hello');
+            var mapOptions = {
+              zoom: 2,
+              center: new google.maps.LatLng(39.909736, -98.522109),
+              mapTypeId: google.maps.MapTypeId.TERRAIN,
+              //mapTypeId: google.maps.MapTypeId.SATELLITE
+            };
+
+            var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+
+            var pointArray = new google.maps.MVCArray(songData);
+            heatmap = new google.maps.visualization.HeatmapLayer({data: pointArray});
+
+            heatmap.setMap(map);
+          }   
+
+
+          initialize();
+          
+
+       }
+
+       function changeRadius() {
+            //console.log(heatmap);
+          heatmap.set('radius', heatmap.get('radius') ? null : 20);
+        }
+
+        $(document).ready(function(){
+          $("#csv-file").change(handleFileSelect);
+        });
+      </script>
+
+      <input type="file" multiple="multiple" id="csv-file" name="files"/>
+
+      
+        <script type="text/javascript">
+        // check DOM Ready
+        $(document).ready(function() {
+            // execute
+            
+        });
+        </script>
+    
+  </head>
+  <body>
+    <div id="map_canvas" style="width: 1000px; height:800px;"></div>
+    <div id="panel">
+      <button onclick="changeRadius()">Change radius</button>
+    </div>
+  </body>
+</html>

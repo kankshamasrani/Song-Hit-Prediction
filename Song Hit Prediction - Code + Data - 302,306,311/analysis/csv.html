@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title>reading xml</title></head>
+<body>
+
+    <script src="/home/rahul/.npm/papaparse/4.1.0/package/papaparse.min.js"></script>
+    <script src="/home/rahul/.npm/jquery/2.1.3/package/dist/cdn/jquery-2.1.3.min.js"></script>
+
+    <input type="file" id="filesx" name="filesx[]" onchange="readmultifiles(this.files)" multiple="" />
+    <div id="bag"><ul/></div>
+    <script>
+        window.onload = function() {
+            if (typeof window.FileReader !== 'function') {
+                alert("The file API isn't supported on this browser yet.");
+            }
+        }
+
+       function readmultifiles(files) {
+            var reader = new FileReader();  
+
+            function readFile(index) {
+                if( index >= files.length ) return;
+
+                var file = files[index];
+                reader.onload = function(e) {  
+                    // get file content  
+                    var results = Papa.parse(e, {delimiter:","});
+
+                    var bin = e.target.result; 
+
+                    // do sth with bin
+
+                    readFile(index+1)
+                }
+                reader.readAsBinaryString(file);
+            }
+            readFile(0);
+        }
+    </script>
+</body>
+</html>
